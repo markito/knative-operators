@@ -1,13 +1,15 @@
+os: centos
 sudo: required
 
 # This moves Kubernetes specific config files.
 env:
   global:
+    - MINISHIFT_VERSION_DIR="v1.30.0"
     - MINISHIFT_VERSION="1.30.0"
     
 before_script:
 # Download minishift
-- curl -Lo minishift.tgz https://github.com/minishift/minishift/releases/download/v.${MINISHIFT_VERSION}/minishift-1.30.0-linux-amd64.tgz && tar -xzvpf minishift.tgz && chmod +x minishift && sudo mv /usr/local/bin/
+- curl -Lo minishift.tgz https://github.com/minishift/minishift/releases/download/${MINISHIFT_VERSION_DIR}/minishift-${MINISHIFT_VERSION}-linux-amd64.tgz && tar -xzvpf minishift.tgz && chmod +x minishift && sudo mv /usr/local/bin/
 
 script:
 # Create example Redis deployment on Kubernetes.

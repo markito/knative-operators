@@ -13,7 +13,7 @@ env:
 before_script:
 # Download minishift
 - curl -Lo minishift.tgz https://github.com/minishift/minishift/releases/download/${MINISHIFT_VERSION_DIR}/minishift-${MINISHIFT_VERSION}-linux-amd64.tgz && tar -xzvpf minishift.tgz && chmod +x minishift-${MINISHIFT_VERSION}-linux-amd64/minishift && sudo mv minishift-${MINISHIFT_VERSION}-linux-amd64/minishift /usr/local/bin/
-- curl -Lo oc.tgz https://github.com/openshift/origin/releases/download/${OC_VERSION}/openshift-origin-client-tools-${OC_VERSION}-${OC_COMMIT}-linux-64bit.tar.gz && tar -xzvpf oc.tgz && chmod +x openshift-origin-client-tools-${OC_VERSION}-${OC_COMMIT}-linux-64bit/oc && mv openshift-origin-client-tools-${OC_VERSION}-${OC_COMMIT}-linux-64bit/oc /usr/local/bin/ && chmod +x openshift-origin-client-tools-${OC_VERSION}-${OC_COMMIT}-linux-64bit/kubectl && mv openshift-origin-client-tools-${OC_VERSION}-${OC_COMMIT}-linux-64bit/kubectl /usr/local/bin/
+- curl -Lo oc.tgz https://github.com/openshift/origin/releases/download/${OC_VERSION}/openshift-origin-client-tools-${OC_VERSION}-${OC_COMMIT}-linux-64bit.tar.gz && tar -xzvpf oc.tgz && chmod +x openshift-origin-client-tools-${OC_VERSION}-${OC_COMMIT}-linux-64bit/oc && sudo mv openshift-origin-client-tools-${OC_VERSION}-${OC_COMMIT}-linux-64bit/oc /usr/local/bin/ && chmod +x openshift-origin-client-tools-${OC_VERSION}-${OC_COMMIT}-linux-64bit/kubectl && sudo mv openshift-origin-client-tools-${OC_VERSION}-${OC_COMMIT}-linux-64bit/kubectl /usr/local/bin/
 
 script:
 # Create example Redis deployment on Kubernetes.

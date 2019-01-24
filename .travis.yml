@@ -9,7 +9,7 @@ env:
     
 before_script:
 # Download minishift
-- curl -Lo minishift.tgz https://github.com/minishift/minishift/releases/download/${MINISHIFT_VERSION_DIR}/minishift-${MINISHIFT_VERSION}-linux-amd64.tgz && tar -xzvpf minishift.tgz && chmod +x minishift && sudo mv /usr/local/bin/
+- curl -Lo minishift.tgz https://github.com/minishift/minishift/releases/download/${MINISHIFT_VERSION_DIR}/minishift-${MINISHIFT_VERSION}-linux-amd64.tgz && tar -xzvpf minishift.tgz && chmod +x minishift-${MINISHIFT_VERSION}-linux-amd64/minishift && sudo mv minishift-${MINISHIFT_VERSION}-linux-amd64/minishift /usr/local/bin/
 
 script:
 # Create example Redis deployment on Kubernetes.
